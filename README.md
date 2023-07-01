@@ -1,2 +1,5 @@
-# pza-demo-0001-dummy-load-ohm-s-law
-Demo 0001: Perform a automated test to check Ohm's Law
+# PZA Demo 0001: Dummy Load & Ohm's Law
+
+This demo aims to show you how to automate a power supply with Panduza to observe the Ohm's Law.
+
+
