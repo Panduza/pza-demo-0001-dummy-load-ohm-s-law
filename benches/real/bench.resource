@@ -11,3 +11,8 @@ Setup Bench Config
     Set Log Level    DEBUG
     Log     ${PZA_ALIASES}
     Load Pza Interfaces From Aliases    ${PZA_ALIASES}
+
+
+Cleanup Bench Config
+    Turn Off Power Supply       demo_psu
+

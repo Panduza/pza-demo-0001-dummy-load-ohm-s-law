@@ -4,8 +4,8 @@ PZA_ALIASES={
     "url": "localhost",
     "port": 1883,
     "interfaces": {
-            "hm310t_ammeter": "pza/default/Hanmatek_Hm310t/am",
-            "hm310t_psu": "pza/default/Hanmatek_Hm310t/psu"
+            "demo_psu": "pza/default/Hanmatek_Hm310t/psu",
+            "demo_ammeter": "pza/default/Hanmatek_Hm310t/am",
         }
     }
 }

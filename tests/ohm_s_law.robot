@@ -1,25 +1,26 @@
 *** Settings ***
-Documentation      Tests on dummy load with PSU
+Documentation      Tests the owhm's with a power supply and a resistor
 
 Metadata           Author            "XdoctorwhoZ"
 
 Resource           bench.resource
 Suite Setup        Setup Bench Config
+Suite Teardown     Cleanup Bench Config
 
 *** Variables ***
 
-${test_psu}           hm310t_psu
-${test_ammeter}       hm310t_ammeter
+${test_psu}           demo_psu
+${test_ammeter}       demo_ammeter
 
-${start_voltage}      2
-${end_voltage}        8
+${start_voltage}      1
+${end_voltage}        10
 ${step_voltage}       0.5
 
 ${resistor_value}     100
 
 *** Test Cases ***
 
-Basic Dummy Load Test
+Generate Graph
     # Set the power supply in a safe mode
     Turn Off Power Supply     ${test_psu}
 
@@ -31,6 +32,9 @@ Basic Dummy Load Test
 
     # Adjust the end value to include it into the test
     ${adjusted_end_voltage}    evaluate   ${end_voltage} + ${step_voltage}
+
+    # Set a current limit
+    Set Power Supply Current Goal    ${test_psu}    1
 
     # For each goal voltage and steps
     FOR    ${goal_voltage}    IN RANGE    ${start_voltage}    ${adjusted_end_voltage}    ${step_voltage}

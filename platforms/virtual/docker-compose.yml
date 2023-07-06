@@ -4,7 +4,6 @@ services:
   # docker compose run --service-ports mosquitto
   mosquitto:
     image: eclipse-mosquitto
-    user: "${UID}:${GID}"
     ports:
       - 1883:1883
       - 9001:9001
@@ -17,7 +16,6 @@ services:
     image: local/panduza-py-platform
     privileged: true
     network_mode: host
-    user: "${UID}:${GID}"
     environment:
       - HUNT
     volumes:
